@@ -1,0 +1,14 @@
+#image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #image-container:hover {
+    opacity: 1;
+  }
+  
