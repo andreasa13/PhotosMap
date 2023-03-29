@@ -1,11 +1,11 @@
-// Define the coordinates and photos
-const photos = [
-  { lat: 40.56992, lng: 22.99149, url: 'IMG_20230317_131114.jpg' },
-  { lat: 51.51, lng: -0.1, url: 'https://drive.google.com/file/d/1QTyLW7yLepOBb3Efm6Y7CX29qiB3hVcS/view?usp=share_link' },
-  { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
-];
+// // Define the coordinates and photos
+// const photos = [
+//   { lat: 40.56992, lng: 22.99149, url: 'IMG_20230317_131114.jpg' },
+//   { lat: 51.51, lng: -0.1, url: 'https://drive.google.com/file/d/1QTyLW7yLepOBb3Efm6Y7CX29qiB3hVcS/view?usp=share_link' },
+//   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
+// ];
 
-const objects = [];
+const photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
   .then(lines => lines.split('\r\n'))
@@ -13,7 +13,7 @@ fetch('./image_data.txt')
       for (const x of data) {
         // code block to be executed
         const [url, lat, lng] = x.split(',');
-        objects.push({url: url, lat: lat, lng: lng});
+        objects.push({url: url, lat: parseFloat(lat), lng: parseFloat(lng)});
         console.log(url);
       }
      // Do product_list with your product data
@@ -23,7 +23,7 @@ fetch('./image_data.txt')
       
   });
 
-  console.log(objects);
+  // console.log(objects);
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
