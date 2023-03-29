@@ -1,30 +1,19 @@
-// Define the coordinates and photos
-// const photos = [
-//   { lat: 51.505, lng: -0.09, url: 'https://placekitten.com/200/300' },
-//   { lat: 51.51, lng: -0.1, url: 'https://placekitten.com/300/200' },
-//   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
-// ];
+header("Access-Control-Allow-Origin: *");
 
-fetch('image_data.txt')
+// Define the coordinates and photos
+const photos = [
+  { lat: 40.56992, lng: 22.99149, url: 'IMG_20230317_131114.jpg' },
+  { lat: 51.51, lng: -0.1, url: 'https://drive.google.com/file/d/1QTyLW7yLepOBb3Efm6Y7CX29qiB3hVcS/view?usp=share_link' },
+  { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
+];
+
+
+fetch('./image_data.txt')
   .then(response => response.text())
   .then(data => {
-    const photos = [];
-    const lines = data.split('\n');
-    for (let i = 0; i < lines.length; i++) {
-      const fields = lines[i].split(',');
-      if (fields.length === 3) {
-        const photo = {
-          url: fields[0],
-          lat: parseFloat(fields[1]),
-          lng: parseFloat(fields[2])
-        };
-        photos.push(photo);
-      }
-    }
-    console.log(photos);
-  })
-  .catch(error => console.error(error));
-
+     // Do product_list with your product data
+     console.log(data);
+  });
 
 
 // Create the map
