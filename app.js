@@ -38,15 +38,17 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 }).addTo(map);
 
 
+photos.forEach(element => console.log(element));
+
 // Add the photos as markers
-for (const photo of photos) {
-  console.log(photo.lat);
-  console.log(typeof(photo.lat));
-  const marker = L.marker([photo.lat, photo.lng]).addTo(map);
-  marker.on('click', () => {
-    window.open(photo.url, '_blank');
-  });
-}
+// for (const photo of photos) {
+//   console.log(photo.lat);
+//   console.log(typeof(photo.lat));
+//   const marker = L.marker([photo.lat, photo.lng]).addTo(map);
+//   marker.on('click', () => {
+//     window.open(photo.url, '_blank');
+//   });
+// }
 
 
 
