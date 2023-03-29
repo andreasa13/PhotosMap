@@ -6,7 +6,7 @@
 // ];
 
 const path = "./images/"
-var photos = [];
+let photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
   .then(lines => lines.split('\r\n'))
