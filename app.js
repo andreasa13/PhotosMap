@@ -5,6 +5,7 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
+const path = "./images/"
 const photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
@@ -13,7 +14,7 @@ fetch('./image_data.txt')
       for (const x of data) {
         // code block to be executed
         const [url, lat, lng] = x.split(',');
-        photos.push({url: url, lat: parseFloat(lat), lng: parseFloat(lng)});
+        photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
         console.log(url);
       }
      // Do product_list with your product data
