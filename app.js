@@ -26,6 +26,7 @@ fetch('./image_data.txt')
   });
 
   console.log(photos);
+  console.log(photos.length);
   for (var i = 0, l = photos.length; i < l; i++) {
     var obj = photos[i];
     console.log(obj);
