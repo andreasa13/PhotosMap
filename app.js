@@ -5,6 +5,8 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
+function myFunction(){
+
 const path = "./images/"
 let photos = [];
 fetch('./image_data.txt')
@@ -24,7 +26,8 @@ fetch('./image_data.txt')
     //  objects.push({url: url, lat: lat, lng: lng});
       
   });
-
+}
+  myFunction()
   console.log(photos);
   console.log(photos.length);
   for (var i = 0, l = photos.length; i < l; i++) {
