@@ -12,7 +12,7 @@ fetch('./image_data.txt')
   .then(data => {
       for (const x of data) {
         // code block to be executed
-        console.log(type(x));
+        console.log(typeof(x));
       }
      // Do product_list with your product data
     //  console.log(data);
