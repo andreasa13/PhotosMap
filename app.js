@@ -11,7 +11,7 @@ fetch('./image_data.txt')
   .then(data => {
      // Do product_list with your product data
     //  console.log(data);
-     const [url, lat, lng] = response.split(',');
+     const [url, lat, lng] = data.split('\r\n').pop(0).split(',');
      objects.push({url: url, lat: lat, lng: lng});
   });
 
