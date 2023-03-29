@@ -14,7 +14,7 @@ fetch('./image_data.txt')
     //  console.log(data);
     //  const [url, lat, lng] = data.split(',');
     //  objects.push({url: url, lat: lat, lng: lng});
-    console.log(type(data));  
+    console.log(typeof(data));  
   });
 
   console.log(objects);
