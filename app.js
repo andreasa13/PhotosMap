@@ -8,7 +8,7 @@ const photos = [
 const objects = [];
 fetch('./image_data.txt')
   .then(response => response.text())
-  .then(lines => lines.split('\n'))
+  .then(lines => lines.split('\r\n'))
   .then(data => {
      // Do product_list with your product data
     //  console.log(data);
