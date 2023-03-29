@@ -5,7 +5,7 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
-const path = "./images/"
+const path = "./images/";
 const photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
@@ -24,7 +24,7 @@ fetch('./image_data.txt')
       
   });
 
-  // console.log(objects);
+console.log(photos);
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
