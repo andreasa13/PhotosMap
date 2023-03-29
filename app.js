@@ -25,7 +25,8 @@ fetch('./image_data.txt')
       
   });
 
-  // console.log(photos);
+  console.log(photos);
+  photos.forEach(element => console.log(element));
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
@@ -38,7 +39,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 }).addTo(map);
 
 
-photos.forEach(element => console.log(element));
+
 
 // Add the photos as markers
 // for (const photo of photos) {
