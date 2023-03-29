@@ -16,8 +16,8 @@ fetch('./image_data.txt')
         const [url, lat, lng] = x.split(',');
         photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
         console.log(url);
-      }
-      console.log(photos);
+      };
+      // console.log(photos);
      // Do product_list with your product data
     //  console.log(data);
     //  const [url, lat, lng] = data.split(',');
@@ -25,7 +25,7 @@ fetch('./image_data.txt')
       
   });
 
-  console.log(photos);
+  // console.log(photos);
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
