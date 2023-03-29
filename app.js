@@ -13,8 +13,7 @@ fetch('./image_data.txt')
     //  console.log(data);
     //  const [url, lat, lng] = data.split(',');
     //  objects.push({url: url, lat: lat, lng: lng});
-    const lines = lines(data);
-    console.log(lines)  
+    console.log(data)  
   });
 
   console.log(objects);
