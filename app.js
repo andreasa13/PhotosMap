@@ -5,14 +5,17 @@ const photos = [
   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 ];
 
-
+const objects = [];
 fetch('./image_data.txt')
   .then(response => response.text())
   .then(data => {
      // Do product_list with your product data
-     console.log(data);
+    //  console.log(data);
+     const [lat, lng, url] = data.split(',');
+     objects.push({lat: lat, lng: lng, url: url});
   });
 
+  console.log(objects);
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
