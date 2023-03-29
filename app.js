@@ -1,5 +1,3 @@
-header("Access-Control-Allow-Origin: *");
-
 // Define the coordinates and photos
 const photos = [
   { lat: 40.56992, lng: 22.99149, url: 'IMG_20230317_131114.jpg' },
