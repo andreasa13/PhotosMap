@@ -26,7 +26,11 @@ fetch('./image_data.txt')
   });
 
   console.log(photos);
-  photos.forEach(element => console.log(element));
+  for (var i = 0, l = photos.length; i < l; i++) {
+    var obj = photos[i];
+    console.log(obj);
+};
+  // photos.forEach(element => console.log(element));
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
