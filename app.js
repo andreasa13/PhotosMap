@@ -5,8 +5,8 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
-const path = "./images/";
-const photos = [];
+const path = "./images/"
+var photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
   .then(lines => lines.split('\r\n'))
@@ -17,6 +17,7 @@ fetch('./image_data.txt')
         photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
         console.log(url);
       }
+      console.log(photos);
      // Do product_list with your product data
     //  console.log(data);
     //  const [url, lat, lng] = data.split(',');
@@ -24,7 +25,7 @@ fetch('./image_data.txt')
       
   });
 
-console.log(photos);
+  console.log(photos);
 
 // Create the map
 const map = L.map('mapid').setView([51.505, -0.09], 13);
