@@ -10,11 +10,15 @@ fetch('./image_data.txt')
   .then(response => response.text())
   .then(lines => lines.split('\r\n'))
   .then(data => {
+      for (const x of data) {
+        // code block to be executed
+        console.log(type(x));
+      }
      // Do product_list with your product data
     //  console.log(data);
     //  const [url, lat, lng] = data.split(',');
     //  objects.push({url: url, lat: lat, lng: lng});
-    console.log(typeof(data));  
+      
   });
 
   console.log(objects);
