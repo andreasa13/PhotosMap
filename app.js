@@ -5,6 +5,11 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
+// console.log(typeof(photos));
+// console.log(photos.length);
+// console.log(photos[Object.keys(photos)[0]]); //returns 'someVal'
+// console.log(Object.values(photos)[0]); // returns 'someVal'
+
 function myFunction(photos){
 
 const path = "./images/"
@@ -29,7 +34,7 @@ fetch('./image_data.txt')
 }
 
 
-const arr = []
+const arr = {}
 const arr_new = myFunction(arr)
 console.log(arr_new);
 console.log(arr_new.length);
