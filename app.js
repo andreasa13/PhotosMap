@@ -54,7 +54,7 @@ function myFunction(photos){
 
 
 // Create the map
-const map = L.map('mapid').setView([40.6401, 22.9444], 13);
+const map = L.map('mapid').setView([40.6401, 22.9444], 10);
 
 // Add a different tile layer
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
