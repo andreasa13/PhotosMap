@@ -5,10 +5,9 @@
 //   { lat: 51.49, lng: -0.05, url: 'https://placekitten.com/400/300' },
 // ];
 
-function myFunction(){
+function myFunction(photos){
 
 const path = "./images/"
-let photos = [];
 fetch('./image_data.txt')
   .then(response => response.text())
   .then(lines => lines.split('\r\n'))
@@ -26,25 +25,29 @@ fetch('./image_data.txt')
     //  objects.push({url: url, lat: lat, lng: lng});
       
   });
+  return photos;
 }
-  myFunction()
-  console.log(photos);
-  console.log(photos.length);
-  for (var i = 0, l = photos.length; i < l; i++) {
-    var obj = photos[i];
-    console.log(obj);
+
+
+const arr = []
+const arr_new = myFunction(arr)
+console.log(arr_new);
+console.log(arr_new.length);
+for (var i = 0, l = arr_new.length; i < l; i++) {
+  var obj = arr_new[i];
+  console.log(obj);
 };
   // photos.forEach(element => console.log(element));
 
 // Create the map
-const map = L.map('mapid').setView([51.505, -0.09], 13);
+// const map = L.map('mapid').setView([51.505, -0.09], 13);
 
 // Add a different tile layer
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-    '<a href="https://carto.com/attribution/">CARTO</a>',
-  maxZoom: 19
-}).addTo(map);
+// L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+//   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+//     '<a href="https://carto.com/attribution/">CARTO</a>',
+//   maxZoom: 19
+// }).addTo(map);
 
 
 
