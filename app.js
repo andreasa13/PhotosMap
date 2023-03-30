@@ -10,28 +10,56 @@
 // console.log(photos[Object.keys(photos)[0]]); //returns 'someVal'
 // console.log(Object.values(photos)[0]); // returns 'someVal'
 
-function myFunction(photos){
+// function myFunction(photos){
 
-const path = "./images/"
-fetch('./image_data.txt')
-  .then(response => response.text())
-  .then(lines => lines.split('\r\n'))
-  .then(data => {
-      for (const x of data) {
-        // code block to be executed
-        const [url, lat, lng] = x.split(',');
-        photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
-      };
+// const path = "./images/"
+// fetch('./image_data.txt')
+//   .then(response => response.text())
+//   .then(lines => lines.split('\r\n'))
+//   .then(data => {
+//       for (const x of data) {
+//         // code block to be executed
+//         const [url, lat, lng] = x.split(',');
+//         photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
+//       };
       
-  });
-  return photos;
-}
+//   });
+//   return photos;
+// }
 
+
+// const arr = [];
+// myFunction(arr).then(arr_new => {
+//   console.log(arr_new);
+// });
+
+function myFunction(photos){
+  const path = "./images/";
+  return new Promise((resolve, reject) => {
+    fetch('./image_data.txt')
+      .then(response => response.text())
+      .then(lines => lines.split('\r\n'))
+      .then(data => {
+        for (const x of data) {
+          const [url, lat, lng] = x.split(',');
+          photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
+        };
+        resolve(photos);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+}
 
 const arr = [];
 myFunction(arr).then(arr_new => {
   console.log(arr_new);
+}).catch(error => {
+  console.log(error);
 });
+
+
 
 
 arr_new.forEach(arr_new => {
