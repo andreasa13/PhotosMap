@@ -52,12 +52,27 @@ function myFunction(photos){
   });
 }
 
+
+// Create the map
+const map = L.map('mapid').setView([51.505, -0.09], 13);
+
+// Add a different tile layer
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+    '<a href="https://carto.com/attribution/">CARTO</a>',
+  maxZoom: 19
+}).addTo(map);
+
+
+
+
 const arr = [];
 myFunction(arr).then(arr_new => {
   arr_new.forEach(obj =>{
-    console.log(obj.url);
-    console.log(obj.lat);
-    console.log(obj.lng);
+    const marker = L.marker([obj.lat, obj.lng]).addTo(map);
+    marker.on('click', () => {
+      window.open(obj.url, '_blank');
+    });;
 
   });
 
@@ -65,39 +80,10 @@ myFunction(arr).then(arr_new => {
   console.log(error);
 });
 
-
-
-// const newObject = Object.assign({}, arr_new); 
-// console.log(newObject);
-
-
-// for (var i = 0, l = arr_new.length; i < l; i++) {
-//   var obj = arr_new[i];
-//   console.log(obj);
-// };
-  // photos.forEach(element => console.log(element));
-
-// Create the map
-// const map = L.map('mapid').setView([51.505, -0.09], 13);
-
-// Add a different tile layer
-// L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-//   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-//     '<a href="https://carto.com/attribution/">CARTO</a>',
-//   maxZoom: 19
-// }).addTo(map);
-
-
-
-
 // Add the photos as markers
 // for (const photo of photos) {
-//   console.log(photo.lat);
-//   console.log(typeof(photo.lat));
-//   const marker = L.marker([photo.lat, photo.lng]).addTo(map);
-//   marker.on('click', () => {
-//     window.open(photo.url, '_blank');
-//   });
+
+ 
 // }
 
 
