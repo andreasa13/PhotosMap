@@ -34,14 +34,17 @@ fetch('./image_data.txt')
 }
 
 
-const arr = {}
+const arr = []
 const arr_new = myFunction(arr)
 console.log(arr_new);
-console.log(arr_new.length);
-for (var i = 0, l = arr_new.length; i < l; i++) {
-  var obj = arr_new[i];
-  console.log(obj);
-};
+const newObject = Object.assign({}, arr_new); 
+console.log(newObject);
+
+
+// for (var i = 0, l = arr_new.length; i < l; i++) {
+//   var obj = arr_new[i];
+//   console.log(obj);
+// };
   // photos.forEach(element => console.log(element));
 
 // Create the map
