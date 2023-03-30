@@ -37,8 +37,15 @@ fetch('./image_data.txt')
 const arr = []
 const arr_new = myFunction(arr)
 console.log(arr_new);
-const newObject = Object.assign({}, arr_new); 
-console.log(newObject);
+
+arr_new.forEach(arr_new => {
+  for (let key in arr_new) {
+    console.log(`${key}: ${arr_new[key]}`)
+  }
+})
+
+// const newObject = Object.assign({}, arr_new); 
+// console.log(newObject);
 
 
 // for (var i = 0, l = arr_new.length; i < l; i++) {
