@@ -21,22 +21,18 @@ fetch('./image_data.txt')
         // code block to be executed
         const [url, lat, lng] = x.split(',');
         photos.push({url: path.concat(url), lat: parseFloat(lat), lng: parseFloat(lng)});
-        // console.log(url);
       };
-      // console.log(photos);
-     // Do product_list with your product data
-    //  console.log(data);
-    //  const [url, lat, lng] = data.split(',');
-    //  objects.push({url: url, lat: lat, lng: lng});
       
   });
   return photos;
 }
 
 
-const arr = []
-const arr_new = myFunction(arr)
-console.log(arr_new);
+const arr = [];
+myFunction(arr).then(arr_new => {
+  console.log(arr_new);
+});
+
 
 arr_new.forEach(arr_new => {
   for (let key in arr_new) {
