@@ -54,19 +54,18 @@ function myFunction(photos){
 
 const arr = [];
 myFunction(arr).then(arr_new => {
-  console.log(arr_new);
+  arr_new.forEach(obj =>{
+    console.log(obj.url);
+    console.log(obj.lat);
+    console.log(obj.lng);
+
+  });
+
 }).catch(error => {
   console.log(error);
 });
 
 
-
-
-arr_new.forEach(arr_new => {
-  for (let key in arr_new) {
-    console.log(`${key}: ${arr_new[key]}`)
-  }
-})
 
 // const newObject = Object.assign({}, arr_new); 
 // console.log(newObject);
